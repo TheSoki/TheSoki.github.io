@@ -1,11 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const unused: any = null;
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AboutMe from '../components/homepage/AboutMe.astro';
+import MyQualities from '../components/homepage/MyQualities.astro';
+import Portfolio from '../components/homepage/Portfolio.astro';
+import Education from '../components/homepage/Education.astro';
+import AboutSkills from '../components/homepage/AboutSkills.astro';
+import Experience from '../components/homepage/Experience.astro';
+import Brands from '../components/homepage/Brands.astro';
+import SaidAboutMe from '../components/homepage/SaidAboutMe.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <div class="min-h-screen">
+      <Header />
+      <AboutMe />
+    </div>
+
+    <MyQualities />
+    <Portfolio />
+    <Education />
+    <AboutSkills />
+    <Experience />
+    <Brands />
+    <SaidAboutMe />
+
+    <Footer />
   </main>
 </Layout>
