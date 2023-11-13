@@ -34,22 +34,22 @@ const education = [
 ---
 
 <section class="py-10 md:py-16">
-  <div class="container max-w-screen-xl mx-auto px-4">
-    <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Education</h1>
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <h1 class="mb-5 text-3xl font-medium text-gray-700 md:text-4xl">Education</h1>
 
-    <p class="font-normal text-gray-500 text-xs md:text-base mb-20">Below is a summary of the places I studied</p>
+    <p class="mb-20 text-xs font-normal text-gray-500 md:text-base">Below is a summary of the places I studied</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
         education.map(({ year, description }) => (
-          <div class="bg-gray-50 px-8 py-10 rounded-md">
-            <h4 class="font-medium text-gray-700 text-lg mb-4">{year}</h4>
+          <div class="rounded-md bg-gray-50 px-8 py-10">
+            <h4 class="mb-4 text-lg font-medium text-gray-700">{year}</h4>
 
-            <p class="font-normal text-gray-500 text-md mb-4" set:html={description} />
+            <p class="text-md mb-4 font-normal text-gray-500" set:html={description} />
 
             <div class="relative">
-              <h6 class="font-semibold text-gray-500 text-md relative z-10">See the place here</h6>
-              <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0" />
+              <h6 class="text-md relative z-10 font-semibold text-gray-500">See the place here</h6>
+              <span class="absolute bottom-1 left-0 z-0 h-1 w-32 bg-blue-200" />
             </div>
           </div>
         ))

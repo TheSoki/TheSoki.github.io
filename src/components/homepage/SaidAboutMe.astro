@@ -40,22 +40,22 @@ const quotes = [
 ---
 
 <section class="py-10 md:py-16">
-  <div class="container max-w-screen-xl mx-auto px-4">
-    <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Testimonial</h1>
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <h1 class="mb-5 text-3xl font-medium text-gray-700 md:text-4xl">Testimonial</h1>
 
-    <p class="font-normal text-gray-500 text-xs md:text-base mb-10 md:mb-20">
+    <p class="mb-10 text-xs font-normal text-gray-500 md:mb-20 md:text-base">
       Below is a summary of the places I studied
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
         quotes.map(({ quote, by, position }) => (
-          <div class="bg-gray-50 px-8 py-10 rounded-md">
-            <p class="font-normal text-gray-500 text-md mb-4" set:html={quote} />
+          <div class="rounded-md bg-gray-50 px-8 py-10">
+            <p class="text-md mb-4 font-normal text-gray-500" set:html={quote} />
 
-            <h6 class="font-semibold text-gray-500 text-md">
+            <h6 class="text-md font-semibold text-gray-500">
               {by}
-              <span class="font-medium text-gray-300 text-sm"> - {position}</span>
+              <span class="text-sm font-medium text-gray-300"> - {position}</span>
             </h6>
           </div>
         ))

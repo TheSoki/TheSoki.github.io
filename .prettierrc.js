@@ -4,7 +4,7 @@ module.exports = {
   printWidth: 120,
   useTabs: false,
   bracketSameLine: true,
-  plugins: [require.resolve('prettier-plugin-astro')],
+  plugins: [require.resolve('prettier-plugin-astro'), require.resolve('prettier-plugin-tailwindcss')],
   overrides: [
     {
       files: '**/*.astro',
