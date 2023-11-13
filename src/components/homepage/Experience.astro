@@ -1,69 +1,53 @@
 ---
 const jobs = [
   {
-    company: 'Massa Fames',
-    place: 'New York',
-    position: 'Junior Front-End Developer',
-    year: '2016',
+    year: 'January 2022 - Present',
+    position: 'Front-End Developer',
+    company: 'LearnerOn',
+    place: 'Prague, Czech Republic',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
   },
   {
-    company: 'Massa Fames',
-    place: 'New York',
-    position: 'Junior Front-End Developer',
-    year: '2016',
+    year: 'January 2022 - Present',
+    position: 'Front-End Developer',
+    company: 'LearnerOn',
+    place: 'Prague, Czech Republic',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
   },
   {
-    company: 'Massa Fames',
-    place: 'New York',
-    position: 'Junior Front-End Developer',
-    year: '2016',
-  },
-  {
-    company: 'Massa Fames',
-    place: 'New York',
-    position: 'Junior Front-End Developer',
-    year: '2016',
-  },
-  {
-    company: 'Massa Fames',
-    place: 'New York',
-    position: 'Junior Front-End Developer',
-    year: '2016',
+    year: 'January 2022 - Present',
+    position: 'Front-End Developer',
+    company: 'LearnerOn',
+    place: 'Prague, Czech Republic',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
   },
 ];
 ---
 
 <section class="py-10 md:py-16">
-  <div class="container max-w-screen-xl mx-auto px-4">
-    <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Experience</h1>
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <h1 class="mb-5 text-3xl font-medium text-gray-700 md:text-4xl">Experience</h1>
 
-    <p class="font-normal text-gray-500 text-xs md:text-base mb-20">Below is a summary of the places I studied</p>
+    <p class="mb-20 text-xs font-normal text-gray-500 md:text-base">Below is a summary of the places I studied</p>
 
-    <div class="flex flex-col lg:flex-row justify-between">
-      <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
-        <h6 class="font-medium text-gray-400 text-base uppercase">Company</h6>
+    <ol class="relative border-s border-gray-700">
+      {
+        jobs.map(({ company, place, position, year, description }) => (
+          <li class="mb-10 ms-4">
+            <div class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-gray-900 bg-gray-700" />
 
-        {
-          jobs.map(({ company, place }) => (
-            <p class="font-semibold text-gray-600 text-base">
-              {company}
-              <span class="font-normal text-gray-300"> / {place}</span>
+            <time class="mb-1 text-sm font-normal text-gray-400">{year}</time>
+            <h3 class="text-lg font-semibold text-gray-600">{position}</h3>
+            <p class="mb-1 text-sm font-normal text-gray-400">
+              {company}, <span class="text-gray-300">{place}</span>
             </p>
-          ))
-        }
-      </div>
-
-      <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
-        <h6 class="font-medium text-gray-400 text-base uppercase">Position</h6>
-
-        {jobs.map(({ position }) => <p class="font-normal text-gray-400 text-base">{position}</p>)}
-      </div>
-
-      <div class="space-y-8 md:space-y-16">
-        <h6 class="font-medium text-gray-400 text-base uppercase">Year</h6>
-
-        {jobs.map(({ year }) => <p class="font-normal text-gray-400 text-base">{year}</p>)}
-      </div>
-    </div>
+            <p class="mb-4 text-base font-normal text-gray-400">{description}</p>
+          </li>
+        ))
+      }
+    </ol>
   </div>
 </section>
