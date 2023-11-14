@@ -23,11 +23,8 @@ const education = [
     position: 'Fullstack Developer',
     company: 'Lemenio',
     description: `Design and development 'from scratch' of learning system for students and teachers of language school. </br>
-    👨‍💻Technologies: TypeScript, React, Tailwind CSS, NextJS, tRPC, Docker, PostgreSQL </br>
-    ✅ Accomplishments: </br>
-    - system architecture design </br>
-    - design and development of new features </br>
-    - first launch`,
+    <span class="not-italic">👨‍💻</span> Technologies: TypeScript, React, Tailwind CSS, NextJS, tRPC, Docker, PostgreSQL </br>
+    <span class="not-italic">📝</span> My responsibilities were overall system architecture design, design and development of features, deploy and first launch.`,
   },
 ];
 ---
@@ -46,16 +43,11 @@ const education = [
         education.reverse().map(({ year, image, imageStyle, position, company, description }) => (
           <div class="rounded-md bg-gray-50 px-8 py-10">
             <Image src={image} alt={`${company} project`} class={imageStyle} />
-            <h3 class="mb-1 text-lg font-semibold text-gray-600">{position}</h3>
+            <h3 class="mb-1 text-xl font-semibold text-gray-600">{position}</h3>
             <time class="text-sm font-normal text-gray-400">{year}</time>
             <p class="mb-1 text-sm font-normal text-gray-400">{company}</p>
 
-            <p class="mb-4 text-sm font-normal italic text-gray-500" set:html={description} />
-
-            <div class="relative">
-              <h6 class="text-md relative z-10 font-semibold text-gray-500">See the place here</h6>
-              <span class="absolute bottom-1 left-0 z-0 h-1 w-32 bg-blue-200" />
-            </div>
+            <p class="mb-4 text-base font-normal italic text-gray-500" set:html={description} />
           </div>
         ))
       }

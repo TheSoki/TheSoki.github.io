@@ -5,10 +5,11 @@ import AboutMe from '@/components/homepage/AboutMe.astro';
 import Projects from '@/components/homepage/Projects.astro';
 import Experience from '@/components/homepage/Experience.astro';
 import MyQualities from '@/components/homepage/MyQualities.astro';
-// import Portfolio from '@/components/homepage/Portfolio.astro';
+import Education from '@/components/homepage/Education.astro';
 // import SaidAboutMe from '@/components/homepage/SaidAboutMe.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 import Layout from '@/layouts/Layout.astro';
+import Description from '@/components/homepage/Description.astro';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -19,10 +20,11 @@ import Layout from '@/layouts/Layout.astro';
     </div>
 
     <MyQualities />
+    <Description />
     <Experience />
     <Projects />
+    <Education />
 
-    <!-- <Portfolio /> -->
     <!-- <SaidAboutMe /> -->
 
     <Footer />

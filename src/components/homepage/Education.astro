@@ -1,0 +1,63 @@
+---
+const portfolio = [
+  {
+    slug: '01',
+    title: 'University of Ostrava',
+    year: '2021 - present',
+    fieldOfStudy: "Bachelor's degree, Software Systems",
+    description: `Expanding general knowleadge about software development, databases, </br>
+    and web development. Currently working on my bachelor's thesis. </br>
+    "Digitization of school timetables for teaching rooms" - learning about IoT, </br>
+    microcontrollers, and embedded systems in general and connecting them </br>
+    to the web.
+    `,
+  },
+  {
+    slug: '02',
+    title: 'SPSEI Ostrava',
+    year: '2017 - 2021',
+    fieldOfStudy: 'Network technology',
+    description: `Four years of high school, doing mostly advanced networking <br />
+      on Cisco devices and programing in C/C++.`,
+  },
+];
+---
+
+<section class="py-10 md:py-16">
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <div class="mb-5 flex flex-col justify-between lg:flex-row">
+      <div class="mb-10 lg:mb-0">
+        <h1 class="mb-5 text-3xl font-medium text-gray-700 md:text-4xl">Education</h1>
+
+        <p class="text-xs font-normal text-gray-500 md:text-base">About my academia and what I have learned so far.</p>
+      </div>
+
+      <div class="space-y-24">
+        {
+          portfolio.map(({ slug, title, description }) => (
+            <div class="flex space-x-6">
+              <h1 class="text-3xl font-normal text-gray-700 md:text-4xl">{slug}</h1>
+
+              <span class="mt-5 h-0.5 w-28 bg-gray-300" />
+
+              <div>
+                <h1 class="mb-5 text-xl font-normal text-gray-700">{title}</h1>
+
+                <p class="text-sm font-normal text-gray-500 md:text-base" set:html={description} />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="text-center md:mx-auto md:w-4/5">
+      <p class="text-base font-normal text-gray-500">
+        I am also proficient in English, both written and spoken. I have been learning it since young age.
+      </p>
+      <p class="text-base font-normal text-gray-500">
+        In 12/2018 I passed the FCE exam. I am currently preparing for the CAE exam.
+      </p>
+    </div>
+  </div>
+</section>
