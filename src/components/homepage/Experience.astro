@@ -1,28 +1,34 @@
 ---
 const jobs = [
   {
-    year: 'January 2022 - Present',
-    position: 'Front-End Developer',
-    company: 'LearnerOn',
-    place: 'Prague, Czech Republic',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    year: '5/2020 - 8/2021',
+    position: 'Junior Frontend Developer',
+    company: 'ProRocketeers',
+    place: 'Ostrava, Czech Republic',
+    description: `<span class="not-italic">🚀</span> First encounter with production grade code. Worked on few projects, mostly in React. But also few lines of backend code in Node.`,
   },
   {
-    year: 'January 2022 - Present',
+    year: '9/2021 - 12/2021',
     position: 'Front-End Developer',
-    company: 'LearnerOn',
-    place: 'Prague, Czech Republic',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    company: 'ATLAS GROUP',
+    place: 'Ostrava, Czech Republic',
+    description: `<span class="not-italic">🔍</span> Contributed to the development of legal-tech applications </br>
+    <span class="not-italic">👨‍💻</span> Tech around TypeScript, React 17 – hooks, context, NextJS, </br>
+    Styles – StyledComponents, React Atlantic (custom open source library), <br/> 
+    API – GraphQL, Apollo, GraphQL Code Generator, <br/>
+    Testing – Jest, Enzyme, React testing library, Playwright`,
   },
   {
-    year: 'January 2022 - Present',
-    position: 'Front-End Developer',
+    year: '1/2022 - Present',
+    position: 'Front-End Developer / Team Lead',
     company: 'LearnerOn',
-    place: 'Prague, Czech Republic',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    place: 'Prague, Czech Republic (remote)',
+    description: `Frontend developer on fresh new platform for lifelong learners. <br/>
+    <span class="not-italic">👨‍💻</span> Technologies: <br/>
+    TypeScript, React, Tailwind CSS, Apollo, GraphQL, AWS  <br/>
+    Development of new features, bug fixing and mentoring junior colleagues, later leading on refactoring and improving code quality. <br/>
+    From 1/2023 oficially as frontend leader. <br/>
+    Also moving towards improved quality assurance using new testing built around E2E testing in Playwright.`,
   },
 ];
 ---
@@ -31,11 +37,14 @@ const jobs = [
   <div class="container mx-auto max-w-screen-xl px-4">
     <h1 class="mb-5 text-3xl font-medium text-gray-700 md:text-4xl">Experience</h1>
 
-    <p class="mb-20 text-xs font-normal text-gray-500 md:text-base">Below is a summary of the places I studied</p>
+    <p class="mb-8 text-xs font-normal text-gray-500 md:text-base">
+      Here's a byte-sized glimpse into my coding adventures – fueled by coffee, adorned in comfy hoodies, and immersed
+      in the world of programming.
+    </p>
 
     <ol class="relative border-s border-gray-700">
       {
-        jobs.map(({ company, place, position, year, description }) => (
+        jobs.reverse().map(({ company, place, position, year, description }) => (
           <li class="mb-10 ms-4">
             <div class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-gray-900 bg-gray-700" />
 
@@ -44,7 +53,7 @@ const jobs = [
             <p class="mb-1 text-sm font-normal text-gray-400">
               {company}, <span class="text-gray-300">{place}</span>
             </p>
-            <p class="mb-4 text-base font-normal text-gray-400">{description}</p>
+            <p class="mb-4 text-sm font-normal italic text-gray-400" set:html={description} />
           </li>
         ))
       }

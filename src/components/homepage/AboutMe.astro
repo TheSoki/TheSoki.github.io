@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import meImage from '../../images/me.jpeg';
+import meImage from '@/images/me.jpeg';
 ---
 
 <section class="py-10 md:py-16">
@@ -18,11 +18,15 @@ import meImage from '../../images/me.jpeg';
         I have a passion for software. I enjoy creating tools that make life easier for people.
       </p>
 
-      <a
+      {
+        /*
+        <a
         href="#"
-        class="rounded-md bg-gray-700 px-7 py-3 text-sm font-medium text-gray-50 transition duration-500 ease-linear hover:bg-gray-50 hover:text-gray-700 md:px-9 md:py-4 md:font-semibold"
+        class="rounded-md bg-gray-600 px-7 py-3 text-sm font-medium text-gray-200 transition duration-500 ease-linear hover:bg-gray-700 hover:text-gray-50 md:px-9 md:py-4 md:font-semibold"
         >Hire me</a
       >
+        */
+      }
     </div>
   </div>
 </section>

@@ -2,13 +2,11 @@
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import AboutMe from '@/components/homepage/AboutMe.astro';
-import AboutSkills from '@/components/homepage/AboutSkills.astro';
-import Brands from '@/components/homepage/Brands.astro';
-import Education from '@/components/homepage/Education.astro';
+import Projects from '@/components/homepage/Projects.astro';
 import Experience from '@/components/homepage/Experience.astro';
 import MyQualities from '@/components/homepage/MyQualities.astro';
-import Portfolio from '@/components/homepage/Portfolio.astro';
-import SaidAboutMe from '@/components/homepage/SaidAboutMe.astro';
+// import Portfolio from '@/components/homepage/Portfolio.astro';
+// import SaidAboutMe from '@/components/homepage/SaidAboutMe.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 import Layout from '@/layouts/Layout.astro';
 ---
@@ -21,12 +19,11 @@ import Layout from '@/layouts/Layout.astro';
     </div>
 
     <MyQualities />
-    <Portfolio />
-    <Education />
-    <AboutSkills />
     <Experience />
-    <Brands />
-    <SaidAboutMe />
+    <Projects />
+
+    <!-- <Portfolio /> -->
+    <!-- <SaidAboutMe /> -->
 
     <Footer />
   </main>

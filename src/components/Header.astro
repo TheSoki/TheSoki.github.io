@@ -1,25 +1,30 @@
 ---
+import { Image } from 'astro:assets';
+import logoImage from '@/images/logo.svg';
+
 interface Props {
   hideNav?: boolean;
 }
 
 const { hideNav = false } = Astro.props;
-
-const brand = '<Sokol />';
 ---
 
 <section class="py-10 md:py-16">
   <header class="container mx-auto max-w-screen-xl px-4">
     <nav class="flex items-center justify-between">
       <p class="text-2xl font-medium text-gray-700 md:text-3xl">
-        <a href="/">{brand}</a>
+        <a href="/">
+          <Image src={logoImage} alt="Logo" class="w-32 md:w-40" />
+        </a>
       </p>
 
       {
         !hideNav && (
-          <button class="text-md rounded-md bg-white px-7 py-3 font-medium text-gray-700 transition duration-500 ease-linear hover:bg-gray-700 hover:text-white md:px-9 md:py-4 md:font-semibold">
-            Get my CV
-          </button>
+          <a
+            href="#"
+            class="rounded-md bg-gray-600 px-7 py-3 text-sm font-medium text-gray-200 transition duration-500 ease-linear hover:bg-gray-700 hover:text-gray-50 md:px-9 md:py-4 md:font-semibold">
+            Contact me
+          </a>
         )
       }
     </nav>
