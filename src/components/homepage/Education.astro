@@ -32,16 +32,18 @@ const portfolio = [
         <p class="text-base font-normal text-gray-500">About my academia and what I have learned so far.</p>
       </div>
 
-      <div class="space-y-24">
+      <div class="space-y-6 lg:space-y-24">
         {
-          portfolio.map(({ slug, title, description }) => (
+          portfolio.map(({ slug, title, year, fieldOfStudy, description }) => (
             <div class="flex space-x-6">
               <h1 class="text-3xl font-normal text-gray-700 md:text-4xl">{slug}</h1>
 
               <span class="mt-5 h-0.5 w-28 bg-gray-300" />
 
               <div>
-                <h1 class="mb-5 text-xl font-normal text-gray-700">{title}</h1>
+                <h1 class="mb-1 text-xl font-normal text-gray-700">{title}</h1>
+                <p class="text-sm font-normal text-gray-500 md:text-sm">{fieldOfStudy}</p>
+                <p class="mb-5 text-sm font-normal text-gray-500 md:text-sm">{year}</p>
 
                 <p class="text-sm font-normal text-gray-500 md:text-base" set:html={description} />
               </div>
