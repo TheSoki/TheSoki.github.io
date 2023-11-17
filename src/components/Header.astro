@@ -21,13 +21,21 @@ const { hideNav = false } = Astro.props;
 
       {
         !hideNav && (
-          <a
-            href="#"
+          <button
+            type="button"
+            onclick="onClick()"
             class="rounded-md bg-gray-600 px-7 py-3 text-sm font-medium text-gray-200 transition duration-500 ease-linear hover:bg-gray-700 hover:text-gray-50 md:px-9 md:py-4 md:font-semibold">
             Contact me
-          </a>
+          </button>
         )
       }
     </nav>
   </header>
 </section>
+
+<script is:inline>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onClick = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  };
+</script>
