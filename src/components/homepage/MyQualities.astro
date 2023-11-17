@@ -1,56 +1,55 @@
 ---
 import { Icon } from 'astro-icon';
+
+const qualities = [
+  {
+    title: 'Passionate Developer',
+    icon: 'ion:rocket-outline',
+    description: `
+    With a fervor for coding, I bring <br />
+    ideas to life through elegant and <br />
+    efficient solutions. My passion drives me <br />
+    to create exceptional user experiences.`,
+  },
+  {
+    title: 'Innovative Thinker',
+    icon: 'ph:codesandbox-logo',
+    description: `
+    Constantly exploring new technologies, <br />
+    I thrive on finding innovative solutions to <br />
+    complex problems. I believe in pushing <br />
+    the boundaries of what's possible in <br />
+    the digital realm.`,
+  },
+  {
+    title: 'Collaborative Team Player',
+    icon: 'fluent:people-team-28-regular',
+    description: `
+    As a team-oriented developer, <br />
+    I understand the importance of collaboration. <br />
+    Together, we can turn ideas into <br />
+    reality and create web experiences that <br />
+    leave a lasting impact.`,
+  },
+];
 ---
 
 <section class="py-10 md:py-16">
   <div class="container mx-auto max-w-screen-xl px-4">
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="rounded-md bg-gray-50 px-8 py-10">
-        <div class="mb-4 flex w-20 justify-center rounded-md bg-gray-100 py-6">
-          <Icon name="ion:rocket-outline" class="w-8" />
-        </div>
+      {
+        qualities.map(({ title, icon, description }) => (
+          <div class="rounded-md bg-gray-50 px-8 py-10">
+            <div class="mb-4 flex h-20 w-20 justify-center rounded-md bg-gray-100 py-6">
+              <Icon name={icon} class="w-8" />
+            </div>
 
-        <h4 class="mb-4 text-lg font-medium text-gray-700">Passionate Developer</h4>
+            <h4 class="mb-4 text-lg font-medium text-gray-700">{title}</h4>
 
-        <p class="text-md font-normal text-gray-500">
-          With a fervor for coding, I bring <br />
-           ideas to life through elegant and <br />
-           efficient solutions. My passion drives me <br />
-           to create exceptional user experiences.
-        </p>
-      </div>
-
-      <div class="rounded-md bg-gray-50 px-8 py-10">
-        <div class="mb-4 flex w-20 justify-center rounded-md bg-gray-100 py-6">
-          <Icon name="ph:codesandbox-logo" class="w-8" />
-        </div>
-
-        <h4 class="mb-4 text-lg font-medium text-gray-700">Innovative Thinker</h4>
-
-        <p class="text-md font-normal text-gray-500">
-          Constantly exploring new technologies, <br />
-           I thrive on finding innovative solutions to <br />
-           complex problems. I believe in pushing <br />
-           the boundaries of what's possible in <br />
-           the digital realm.
-        </p>
-      </div>
-
-      <div class="rounded-md bg-gray-50 px-8 py-10">
-        <div class="mb-4 flex w-20 justify-center rounded-md bg-gray-100 py-6">
-          <Icon name="fluent:people-team-28-regular" class="w-8" />
-        </div>
-
-        <h4 class="mb-4 text-lg font-medium text-gray-700">Collaborative Team Player</h4>
-
-        <p class="text-md font-normal text-gray-500">
-          As a team-oriented developer, <br />
-           I understand the importance of collaboration. <br />
-           Together, we can turn ideas into <br />
-           reality and create web experiences that <br />
-           leave a lasting impact.
-        </p>
-      </div>
+            <p class="text-md font-normal text-gray-500" set:html={description} />
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
