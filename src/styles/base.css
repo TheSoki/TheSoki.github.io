@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen bg-gray-100 font-serif selection:bg-gray-300 selection:text-gray-500;
+  }
+}
