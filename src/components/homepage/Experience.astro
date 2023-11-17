@@ -36,7 +36,7 @@ const jobs = [
 
 <section class="py-10 md:py-16">
   <div class="container mx-auto max-w-screen-xl px-4">
-    <h1 class="mb-5 text-3xl font-medium text-gray-700 md:text-4xl">Experience</h1>
+    <h1 class="mb-5 text-3xl font-medium text-gray-700">Experience</h1>
 
     <p class="mb-8 text-base font-normal text-gray-500">
       Here's a byte-sized glimpse into my coding adventures – fueled by coffee, adorned in comfy hoodies, and immersed
@@ -54,7 +54,7 @@ const jobs = [
             <p class="mb-1 text-sm font-normal text-gray-400">
               {company}, <span class="text-gray-300">{place}</span>
             </p>
-            <p class="mb-4 text-base font-normal italic text-gray-400" set:html={description} />
+            <p class="mb-4 text-sm font-normal italic text-gray-400" set:html={description} />
           </li>
         ))
       }
