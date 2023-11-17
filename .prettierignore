@@ -25,3 +25,4 @@ yarn.lock
 # Public browser files
 *.xml
 *.ico
+*.txt

@@ -9,7 +9,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/favicon.svg' } = Astro.props;
+const { title, description, image = 'logo.png' } = Astro.props;
 ---
 
 <!doctype html>
@@ -55,13 +55,3 @@ const { title, description, image = '/favicon.svg' } = Astro.props;
     <slot />
   </body>
 </html>
-
-<style is:inline>
-  font-face {
-    font-family: 'Atkinson Hyperlegible';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('/fonts/atkinson-regular.woff') format('woff');
-  }
-</style>
