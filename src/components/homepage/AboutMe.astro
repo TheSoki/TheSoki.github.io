@@ -17,6 +17,26 @@ import meImage from '@/images/me.jpeg';
       <p class="text-md mb-16 font-normal text-gray-600 dark:text-gray-300 md:text-xl">
         I have a passion for software. I enjoy creating tools that make life easier for people.
       </p>
+
+      <button
+        type="button"
+        id="contact-me-button"
+        class:list={[
+          'rounded-md px-7 py-3 text-sm font-medium transition duration-500 ease-linear md:px-9 md:py-4 md:font-semibold',
+          'text-gray-200 dark:text-gray-700',
+          'hover:bg-gray-700 dark:hover:bg-gray-200',
+          'hover:text-gray-50 dark:hover:text-gray-900',
+          'bg-gray-600 dark:bg-gray-300',
+        ]}>
+        Contact me
+      </button>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  const onClick = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  };
+  document.getElementById('contact-me-button').addEventListener('click', onClick);
+</script>

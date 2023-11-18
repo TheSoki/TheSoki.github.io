@@ -1,12 +1,6 @@
 ---
 import ThemeIcon from './ThemeIcon.astro';
 
-interface Props {
-  hideNav?: boolean;
-}
-
-const { hideNav = false } = Astro.props;
-
 const brand = '< Sokol  />';
 ---
 
@@ -17,32 +11,7 @@ const brand = '< Sokol  />';
         <a href="/">{brand}</a>
       </p>
 
-      <div class="flex items-center space-x-4">
-        {
-          !hideNav && (
-            <button
-              type="button"
-              id="contact-me-button"
-              class:list={[
-                'rounded-md px-7 py-3 text-sm font-medium transition duration-500 ease-linear md:px-9 md:py-4 md:font-semibold',
-                'text-gray-200 dark:text-gray-700',
-                'hover:bg-gray-700 dark:hover:bg-gray-200',
-                'hover:text-gray-50 dark:hover:text-gray-900',
-                'bg-gray-600 dark:bg-gray-300',
-              ]}>
-              Contact me
-            </button>
-          )
-        }
-        <ThemeIcon />
-      </div>
+      <ThemeIcon />
     </nav>
   </header>
-
-  <script is:inline>
-    const onClick = () => {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    };
-    document.getElementById('contact-me-button').addEventListener('click', onClick);
-  </script>
 </section>
