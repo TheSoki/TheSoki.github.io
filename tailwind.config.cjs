@@ -5,12 +5,11 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
-      extend: {
-        fontFamily: {
-          sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
-        },
+      fontFamily: {
+        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
       },
     },
   },
   plugins: [],
+  darkMode: 'class',
 };

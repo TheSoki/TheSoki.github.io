@@ -27,25 +27,27 @@ const portfolio = [
   <div class="container mx-auto max-w-screen-xl px-4">
     <div class="mb-5 flex flex-col justify-between lg:flex-row">
       <div class="mb-10 lg:mb-0">
-        <h1 class="mb-5 text-3xl font-medium text-gray-700">Education</h1>
+        <h1 class="mb-5 text-3xl font-medium text-gray-700 dark:text-gray-200">Education</h1>
 
-        <p class="text-base font-normal text-gray-500">About my academic journey and what I've learned so far.</p>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+          About my academic journey and what I've learned so far.
+        </p>
       </div>
 
       <div class="space-y-6 lg:space-y-24">
         {
           portfolio.map(({ slug, title, year, fieldOfStudy, description }) => (
             <div class="flex space-x-6">
-              <h1 class="text-3xl font-normal text-gray-700">{slug}</h1>
+              <h1 class="text-3xl font-normal text-gray-700 dark:text-gray-200">{slug}</h1>
 
-              <span class="mt-5 h-0.5 w-28 bg-gray-300" />
+              <span class="mt-5 h-0.5 w-28 bg-gray-300 dark:bg-gray-600" />
 
               <div>
-                <h1 class="mb-1 text-xl font-normal text-gray-700">{title}</h1>
-                <p class="text-sm font-normal text-gray-500 ">{fieldOfStudy}</p>
-                <p class="mb-2 text-sm font-normal text-gray-500 ">{year}</p>
+                <h1 class="mb-1 text-xl font-normal text-gray-700 dark:text-gray-200">{title}</h1>
+                <p class="text-sm font-normal text-gray-500 dark:text-gray-400">{fieldOfStudy}</p>
+                <p class="mb-2 text-sm font-normal text-gray-500 dark:text-gray-400">{year}</p>
 
-                <p class="text-sm font-normal text-gray-500" set:html={description} />
+                <p class="text-sm font-normal text-gray-500 dark:text-gray-400" set:html={description} />
               </div>
             </div>
           ))
@@ -54,10 +56,10 @@ const portfolio = [
     </div>
 
     <div class="text-center md:mx-auto md:w-4/5">
-      <p class="text-base font-normal text-gray-500">
+      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
         I am proficient in both written and spoken English, having learned it since a young age.
       </p>
-      <p class="text-base font-normal text-gray-500">
+      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
         In 12/2018 I passed the FCE exam and am currently preparing for the CAE exam.
       </p>
     </div>

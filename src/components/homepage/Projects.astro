@@ -41,9 +41,9 @@ const education = [
 
 <section class="py-10 md:py-16">
   <div class="container mx-auto max-w-screen-xl px-4">
-    <h1 class="mb-5 text-3xl font-medium text-gray-700">Projects</h1>
+    <h1 class="mb-5 text-3xl font-medium text-gray-700 dark:text-gray-200">Projects</h1>
 
-    <p class="mb-8 text-base font-normal text-gray-500">
+    <p class="mb-8 text-base font-normal text-gray-500 dark:text-gray-400">
       Sometimes, I engage in external passion projects, bringing a touch of enjoyment to my coding pursuits. Here are
       some of my favorites.
     </p>
@@ -51,7 +51,7 @@ const education = [
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
         education.reverse().map(({ year, image, position, company, description }) => (
-          <div class="rounded-md bg-gray-50 px-8 py-10">
+          <div class="rounded-md bg-gray-50 px-8 py-10 dark:bg-gray-900">
             <Image
               src={image}
               alt={`${company} project`}
@@ -60,11 +60,11 @@ const education = [
                 maxHeight: '12rem',
               }}
             />
-            <time class="mb-1 text-sm font-normal text-gray-400">{year}</time>
-            <h3 class="text-xl font-semibold text-gray-600">{position}</h3>
-            <p class="mb-1 text-sm font-normal text-gray-400">{company}</p>
+            <time class="mb-1 text-sm font-normal text-gray-400 dark:text-gray-500">{year}</time>
+            <h3 class="text-xl font-semibold text-gray-600 dark:text-gray-300">{position}</h3>
+            <p class="mb-1 text-sm font-normal text-gray-400 dark:text-gray-500">{company}</p>
 
-            <p class="mb-4 text-sm font-normal italic text-gray-500" set:html={description} />
+            <p class="mb-4 text-sm font-normal italic text-gray-500 dark:text-gray-400" set:html={description} />
           </div>
         ))
       }
