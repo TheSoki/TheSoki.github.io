@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+        // link: https://fonts.google.com/noto/specimen/Noto+Serif
+        serif: ['Noto Serif', ...defaultTheme.fontFamily.serif],
       },
     },
   },
