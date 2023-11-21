@@ -57,6 +57,8 @@
   window.localStorage.setItem('theme', theme);
 
   const handleToggleClick = () => {
+    document.body.style.transition = 'background 0.3s ease';
+
     const element = document.documentElement;
     element.classList.toggle('dark');
 
