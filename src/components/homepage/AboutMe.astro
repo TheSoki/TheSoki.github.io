@@ -27,7 +27,8 @@ import meImage from '@/images/me.jpeg';
           'hover:bg-gray-700 dark:hover:bg-gray-200',
           'hover:text-gray-50 dark:hover:text-gray-900',
           'bg-gray-600 dark:bg-gray-300',
-        ]}>
+        ]}
+        onclick="onClick()">
         Contact me
       </button>
     </div>
@@ -35,8 +36,8 @@ import meImage from '@/images/me.jpeg';
 </section>
 
 <script is:inline>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onClick = () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
-  document.getElementById('contact-me-button').addEventListener('click', onClick);
 </script>
