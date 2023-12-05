@@ -62,19 +62,19 @@ const skills: Skills = [
     section: 'BACKEND',
     content: [
       {
-        name: 'Backend - NodeJS/Deno/Bun & Express/Fastify/Nest',
+        name: 'NodeJS/Deno/Bun & Express/Fastify/Nest',
         level: 'craftsman',
         description:
           "Although it won't win any awards for speed, together with Express/Fastify/Nest and REST/GraphQL/any-RPC, it makes a solid choice for building backend applications. It's like a reliable car that gets me from point A to point B. I use it for simple backend applications that don't require the speed of Rust or the scalability of Go.",
       },
       {
-        name: 'Databases - Postgres/MySQL/Vitess/Redis/NoSQL',
+        name: 'Postgres/MySQL/Vitess, Redis, NoSQL',
         level: 'craftsman',
         description:
           "Databases are the pillars of any data kingdom. Experiments in this realm don't come into place because who would like to fight with data losses? From the reliability of Postgres and MySQL to the scalability of Vitess and the speed of Redis or simplicity of NoSQL, it wields a diverse arsenal.",
       },
       {
-        name: 'Queues - RabbitMQ/Kafka',
+        name: 'RabbitMQ/Kafka',
         level: 'newbie',
         description:
           'Queues are like a backstage pass to asynchronous processing. RabbitMQ and Kafka orchestrate the flow of tasks behind the scenes, allowing distributed systems more resilience and scalability.',
@@ -97,7 +97,7 @@ const skills: Skills = [
     </p>
 
     <div class="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="rounded-md bg-gray-50 px-8 py-10 dark:bg-gray-900">
+      <div class="rounded-md bg-gray-50 px-4 py-5 dark:bg-gray-900 md:px-8 md:py-10">
         <h3 class="flex items-center text-xl font-semibold text-gray-600 dark:text-gray-300">
           <Icon name="carbon:skill-level-basic" class="mr-2 h-6 w-6" /> Newbie Zone
         </h3>
@@ -107,40 +107,40 @@ const skills: Skills = [
         </p>
       </div>
 
-      <div class="rounded-md bg-gray-50 px-8 py-10 dark:bg-gray-900">
+      <div class="rounded-md bg-gray-50 px-4 py-5 dark:bg-gray-900 md:px-8 md:py-10">
         <h3 class="flex items-center text-xl font-semibold text-gray-600 dark:text-gray-300">
           <Icon name="carbon:skill-level-intermediate" class="mr-2 h-6 w-6" /> Craftsman's Arsenal
         </h3>
         <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
-          This is workshop. Here, I'm honing my skills with tech that feels solid in my hands. These are the tools I
-          confidently use to craft my projects. It's not just about trying them out; it's about mastering and creating
-          with them.
+          Here, I'm honing my skills with tech that feels solid in my hands. These are the tools I confidently use to
+          craft my projects. It's not just about trying them out; it's about mastering and creating with them.
         </p>
       </div>
 
-      <div class="rounded-md bg-gray-50 px-8 py-10 dark:bg-gray-900">
+      <div class="rounded-md bg-gray-50 px-4 py-5 dark:bg-gray-900 md:px-8 md:py-10">
         <h3 class="flex items-center text-xl font-semibold text-gray-600 dark:text-gray-300">
           <Icon name="carbon:skill-level-advanced" class="mr-2 h-6 w-6" /> Epic Conqueror's Domain
         </h3>
         <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
           Welcome to the arena, where battle-tested technologies take the stage. In this space, I'm confidently
-          deploying the tools that have proven their worth in real-world coding challenges. It's not just about writing
-          code; it's about conquering the coding landscape with these tried-and-true tech choices.
+          deploying the tools that have proven their worth in real-world coding challenges.
         </p>
       </div>
     </div>
 
-    <div class="rounded-md bg-gray-50 px-8 py-10 dark:bg-gray-900">
+    <div class="rounded-md bg-gray-50 px-4 py-5 dark:bg-gray-900 md:px-8 md:py-10">
       {
         skills.map(({ section, content }) => (
           <div class="mb-4">
             <h3 class="flex items-center text-xl font-semibold text-gray-600 dark:text-gray-300">{section}</h3>
             {content.map(({ name, level, description }) => (
               <div class="mb-2">
-                <h3 class="flex items-center text-lg font-medium text-gray-600 dark:text-gray-300">
-                  {level === 'newbie' && <Icon name="carbon:skill-level-basic" class="mr-1 h-4 w-4" />}
-                  {level === 'craftsman' && <Icon name="carbon:skill-level-intermediate" class="mr-1 h-4 w-4" />}
-                  {level === 'epic' && <Icon name="carbon:skill-level-advanced" class="mr-1 h-4 w-4" />}
+                <h3 class="flex items-center text-base font-medium text-gray-600 dark:text-gray-300 md:text-lg">
+                  {level === 'newbie' && <Icon name="carbon:skill-level-basic" class="mr-1 h-4 w-4 shrink-0" />}
+                  {level === 'craftsman' && (
+                    <Icon name="carbon:skill-level-intermediate" class="mr-1 h-4 w-4 shrink-0" />
+                  )}
+                  {level === 'epic' && <Icon name="carbon:skill-level-advanced" class="mr-1 h-4 w-4 shrink-0" />}
                   {name}
                 </h3>
                 <p class="mb-1 text-sm font-normal text-gray-500 dark:text-gray-400">{description}</p>
