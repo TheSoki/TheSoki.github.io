@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:astro/recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": ["plugin:astro/recommended", "plugin:@typescript-eslint/recommended", "plugin:markdown/recommended"],
   "rules": {
     "@typescript-eslint/no-explicit-any": 1,
     "@typescript-eslint/explicit-module-boundary-types": 0,
@@ -21,6 +21,10 @@
         "parser": "@typescript-eslint/parser",
         "extraFileExtensions": [".astro"]
       }
+    },
+    {
+      "files": ["**/*.md/*.js", "**/*.md/*.ts", "**/*.mdx/*.js", "**/*.mdx/*.ts"],
+      "processor": "markdown/markdown"
     }
   ]
 }
