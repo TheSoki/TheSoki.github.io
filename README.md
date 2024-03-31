@@ -6,8 +6,8 @@ Portfolio app written in TypeScript & Astro.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) version 20 (tested on v20.9.0)
-- [pnpm](https://pnpm.io/) version 8 (tested on v8.10.2)
+- [Node.js](https://nodejs.org/) version 20 (tested on v20.10.0)
+- [pnpm](https://pnpm.io/) version 8 (tested on v8.15.1)
 
 ### Installation and running
 
