@@ -44,7 +44,10 @@
     "*": "prettier --write"
   },
   "engines": {
-    "node": ">=20.10.0",
-    "pnpm": ">=8.15.1"
-  }
+    "node": ">= 20.10.0",
+    "pnpm": ">= 9.1.0",
+    "npm": "use-pnpm",
+    "yarn": "use-pnpm"
+  },
+  "packageManager": "pnpm@9.1.0"
 }
