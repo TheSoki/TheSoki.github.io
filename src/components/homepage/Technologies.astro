@@ -1,142 +1,89 @@
 ---
-import { Icon } from 'astro-icon';
-
-type Skills = {
+type Skill = {
   section: string;
   content: {
     name: string;
-    level: 'newbie' | 'craftsman' | 'epic';
-    description: string;
+    level: 'trying_out' | 'experienced' | 'expert';
   }[];
-}[];
+};
 
-const skills: Skills = [
+const skills = [
   {
     section: 'FRONTEND',
     content: [
-      {
-        name: 'TypeScript',
-        level: 'epic',
-        description:
-          'TypeScript is an absolute must, adding a layer of static typing to JavaScript and catching bugs before they even happen. Writing code feels like wielding a powerful weapon against runtime errors. I use it for all my projects because it transforms the chaotic world of JavaScript into a structured and enjoyable experience.',
-      },
-      {
-        name: 'React/Preact & Next.js & Gatsby',
-        level: 'epic',
-        description:
-          'Building user interfaces with React is like conducting a symphony of components. React allows for the orchestration of complex state management and seamless integration with a vast ecosystem of libraries and tools, while Preact brings the magic to smaller bundles. Together with Next.js or Gatsby, it makes my combo for frontend symphony, delivering epic experiences for interactive web apps.',
-      },
-      {
-        name: 'React Native & Expo',
-        level: 'epic',
-        description:
-          "Taking the React magic to the mobile realm, React Native and Expo turn code into cross-platform spells. Crafting one codebase to rule both iOS and Android feels like wizardry. The result? Epic mobile apps, sprinkled with Expo's extra enchantments for a delightful development experience.",
-      },
-      {
-        name: 'Solid',
-        level: 'newbie',
-        description:
-          "Solid is like a breath of fresh air in the reactive UI field. It’s like exploring a new land with promises of efficient reactivity. Exploring its simplicity and performance, I'm excited to unravel its mysteries and witness firsthand how it reshapes the way I build user interfaces using fine-grained reactivity.",
-      },
-      {
-        name: 'Svelte',
-        level: 'newbie',
-        description:
-          "Svelte is a great alternative for interactive web apps. The build step becomes an art studio, crafting lightweight and performant applications. I'm eager to embrace its simplicity and see how it streamlines my frontend artistry.",
-      },
-      {
-        name: 'Vue.js',
-        level: 'newbie',
-        description:
-          'As an alternative to React, Vue.js is another great tool for crafting dynamic user interfaces. With its simple and approachable syntax, Vue.js lets me build enterprise-level applications effortlessly.',
-      },
-      {
-        name: 'Astro',
-        level: 'craftsman',
-        description:
-          'Astro is an absolute must for crafting static sites with dynamic capabilities. It’s like building a spaceship that combines the speed of static sites with the power of dynamic components. Astro empowers me to create web experiences that defy the boundaries of traditional static sites.',
-      },
+      { name: 'TypeScript', level: 'expert' },
+      { name: 'React/Preact & Next.js & Gatsby', level: 'expert' },
+      { name: 'React Native & Expo', level: 'expert' },
+      { name: 'Solid', level: 'trying_out' },
+      { name: 'Svelte', level: 'trying_out' },
+      { name: 'Vue.js', level: 'trying_out' },
+      { name: 'Astro', level: 'experienced' },
     ],
   },
   {
     section: 'BACKEND',
-    content: [
-      {
-        name: 'NodeJS/Deno/Bun & Express/Fastify/Nest',
-        level: 'craftsman',
-        description:
-          "Although it won't win any awards for speed, together with Express/Fastify/Nest and REST/GraphQL/any-RPC, it makes a solid choice for building backend applications. It's like a reliable car that gets me from point A to point B. I use it for simple backend applications that don't require the speed of Rust or the scalability of Go.",
-      },
-    ],
+    content: [{ name: 'NodeJS/Deno/Bun & Express/Fastify/Nest', level: 'experienced' }],
   },
   {
     section: 'INFRASTRUCTURE',
     content: [
-      {
-        name: 'Postgres/MySQL/Vitess, Redis, NoSQL',
-        level: 'craftsman',
-        description:
-          "Databases are the pillars of any data kingdom. Experiments in this realm don't come into place because who would like to fight with data losses? From the reliability of Postgres and MySQL to the scalability of Vitess and the speed of Redis or simplicity of NoSQL, it wields a diverse arsenal.",
-      },
-      {
-        name: 'RabbitMQ/Kafka',
-        level: 'craftsman',
-        description:
-          'Queues are like a backstage pass to asynchronous processing. RabbitMQ and Kafka orchestrate the flow of tasks behind the scenes, allowing distributed systems more resilience and scalability.',
-      },
-      {
-        name: 'AWS',
-        level: 'craftsman',
-        description:
-          'AWS is like a vast toolbox for the cloud. From EC2 instances to S3 storage, it offers a wide range of services that empower me to build and scale applications effortlessly. Its global infrastructure ensures reliability and performance.',
-      },
-      {
-        name: 'GCP',
-        level: 'craftsman',
-        description:
-          'Google Cloud Platform (GCP) is a robust and versatile cloud platform. With powerful services like Compute Engine, Cloud Storage, and BigQuery, it offers scalable and high-performance solutions for modern applications. Its strong integration with data analytics and machine learning tools provides an edge in creating intelligent applications. GCP’s global network and security features ensure dependable and secure deployments.',
-      },
-      {
-        name: 'Terraform',
-        level: 'newbie',
-        description:
-          'Terraform is like a magical blueprint for infrastructure as code. As I explore its capabilities, I am discovering how it can define and provision data center infrastructure using a high-level configuration language. This tool promises to streamline and automate my infrastructure management processes.',
-      },
+      { name: 'Postgres/MySQL/Vitess, Redis, NoSQL', level: 'experienced' },
+      { name: 'RabbitMQ/Kafka', level: 'experienced' },
+      { name: 'AWS', level: 'experienced' },
+      { name: 'GCP', level: 'experienced' },
+      { name: 'Terraform', level: 'trying_out' },
     ],
   },
-];
+] satisfies Skill[];
+
+const levelWidthPercentMap: Record<string, number> = {
+  trying_out: 33,
+  experienced: 66,
+  expert: 100,
+};
+
+const levelColorMap: Record<string, string> = {
+  trying_out: 'bg-gray-600 dark:bg-gray-500',
+  experienced: 'bg-gray-700 dark:bg-gray-300',
+  expert: 'bg-gray-900 dark:bg-gray-50',
+};
 ---
 
 <section class="py-10 md:py-16">
   <div class="container mx-auto max-w-screen-xl px-4">
     <h2 class="mb-5 text-3xl font-medium text-gray-700 dark:text-gray-200">Technologies</h2>
 
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Here are some of the technologies I've worked that are worth mentioning.
+    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+      Here are some of the technologies I've worked with that are worth mentioning.
     </p>
     <p class="mb-8 text-base font-normal text-gray-500 dark:text-gray-400">
       I'm always learning new things and experimenting with new technologies, so this list will be (probably) updated
       over time.
     </p>
 
-    <div class="rounded-md bg-gray-50 px-4 py-5 dark:bg-gray-900 md:px-8 md:py-10">
+    <div class="space-y-6">
       {
         skills.map(({ section, content }) => (
-          <div class="mb-4">
-            <h3 class="flex items-center text-xl font-semibold text-gray-600 dark:text-gray-300">{section}</h3>
-            {content.map(({ name, level, description }) => (
-              <div class="mb-2">
-                <h3 class="flex items-center text-base font-medium text-gray-600 dark:text-gray-300 md:text-lg">
-                  {level === 'newbie' && <Icon name="carbon:skill-level-basic" class="mr-1 h-4 w-4 shrink-0" />}
-                  {level === 'craftsman' && (
-                    <Icon name="carbon:skill-level-intermediate" class="mr-1 h-4 w-4 shrink-0" />
-                  )}
-                  {level === 'epic' && <Icon name="carbon:skill-level-advanced" class="mr-1 h-4 w-4 shrink-0" />}
-                  {name}
-                </h3>
-                <p class="mb-1 text-sm font-normal text-gray-500 dark:text-gray-400">{description}</p>
-              </div>
-            ))}
+          <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+            <h3 class="mb-6 text-xl font-semibold text-gray-600 dark:text-gray-300">{section}</h3>
+            <div class="space-y-6">
+              {content.map((skill) => (
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <h4 class="text-sm font-medium text-gray-600 dark:text-gray-300">{skill.name}</h4>
+                    <span class="text-sm font-normal text-gray-400 first-letter:uppercase dark:text-gray-500">
+                      {skill.level.replace('_', ' ')}
+                    </span>
+                  </div>
+                  <div class="relative h-2 w-full rounded bg-gray-200 dark:bg-gray-700">
+                    <div
+                      class={`absolute left-0 top-0 h-full rounded transition-all duration-300 ${levelColorMap[skill.level]}`}
+                      style={`width: ${levelWidthPercentMap[skill.level]}%`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         ))
       }
