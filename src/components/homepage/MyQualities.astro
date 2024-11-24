@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon';
+
+const qualities = [
+  {
+    title: 'Passionate Developer',
+    icon: 'ion:rocket-outline',
+    description: `
+    With a fervor for coding, I bring <br />
+    ideas to life through elegant and <br />
+    efficient solutions. My passion drives me <br />
+    to create exceptional user experiences.`,
+  },
+  {
+    title: 'Innovative Thinker',
+    icon: 'ph:codesandbox-logo',
+    description: `
+    Constantly exploring new technologies, <br />
+    I thrive on finding innovative solutions to <br />
+    complex problems. I believe in pushing <br />
+    the boundaries of what's possible in <br />
+    the digital realm.`,
+  },
+  {
+    title: 'Collaborative Team Player',
+    icon: 'fluent:people-team-28-regular',
+    description: `
+    As a team-oriented developer, <br />
+    I understand the importance of collaboration. <br />
+    Together, we can turn ideas into <br />
+    reality and create web experiences that <br />
+    leave a lasting impact.`,
+  },
+];
+
+const iconClassList = ['h-8 w-8', 'text-gray-500 dark:text-gray-400'];
+---
+
+<section class="py-10 md:py-16">
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        qualities.map(({ title, icon, description }) => (
+          <div class="rounded-md bg-gray-50 px-4 py-5 dark:bg-gray-900 md:px-8 md:py-10">
+            <div class="mb-4 flex h-20 w-20 justify-center rounded-md bg-gray-100 py-6 dark:bg-gray-800">
+              <Icon name={icon} class:list={iconClassList} />
+            </div>
+
+            <h2 class="mb-4 text-lg font-medium text-gray-700 dark:text-gray-200">{title}</h2>
+
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400" set:html={description} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

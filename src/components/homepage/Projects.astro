@@ -1,0 +1,126 @@
+---
+import { Image } from 'astro:assets';
+import vsbImage from '@/images/projects/vsb.webp';
+import lemenioImage from '@/images/projects/lemenio.png';
+import datinnImage from '@/images/projects/datinn.png';
+
+const education = [
+  {
+    year: '2/2022 - 4/2022',
+    image: vsbImage,
+    position: 'Mobile App Developer',
+    company: 'VŠB',
+    description: `<span class="not-italic">👨‍🎓</span> New app for university students. VŠB APP </br>
+    <span class="not-italic">👨‍💻</span> Technologies: TypeScript, React Native, Expo </br>
+    <span class="not-italic">📝</span> I was introduced to an app in a terrible state, requiring a ground-up rewrite.
+    I proceeded to develop new features and release the first version of the app <span class="not-italic">🎉</span>.
+    `,
+  },
+  {
+    year: '8/2022 - 4/2023',
+    image: lemenioImage,
+    position: 'Full-Stack Developer',
+    company: 'Lemenio',
+    description: `<span class="not-italic">🏫</span> Design and development 'from scratch' of learning system for students and teachers of a language school. </br>
+    <span class="not-italic">👨‍💻</span> Technologies: TypeScript, React, Tailwind CSS, NextJS, tRPC, Docker, PostgreSQL </br>
+    <span class="not-italic">📝</span> My responsibilities included overall system architecture design, feature design and development, deployment, and the initial launch <span class="not-italic">🚀</span>.`,
+  },
+  {
+    year: '9/2023 - 1/2024',
+    image: datinnImage,
+    position: 'Mobile App Developer',
+    company: 'Datinn / Vibemond',
+    description: `<span class="not-italic">🔥</span> New app in the field of dating. I joined the "Datinn" project at a crucial stage, just before its anticipated release. </br>
+    <span class="not-italic">👨‍💻</span> Technologies: TypeScript, React Native, Expo </br>
+    <span class="not-italic">📝</span> My primary focus was on enhancing the app's stability and resolving any lingering issues to ensure a smooth user experience upon launch <span class="not-italic">🚀</span>. </br>
+    Afterwards, I was responsible for developing new features, implementing new designs, and overall app maintenance. 
+`,
+  },
+];
+---
+
+<section class="py-10 md:py-16">
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <h2 class="mb-5 text-3xl font-medium text-gray-700 dark:text-gray-200">Projects</h2>
+
+    <p class="mb-8 text-base font-normal text-gray-500 dark:text-gray-400">
+      From time to time I engage in external passion projects, bringing a touch of enjoyment to my coding pursuits. Here
+      are some of my favorites.
+    </p>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        education.reverse().map(({ year, image, position, company, description }) => (
+          <div class="rounded-md bg-gray-50 px-4 py-5 dark:bg-gray-900 md:px-8 md:py-10">
+            <div
+              style={{
+                height: '12rem',
+              }}>
+              <Image
+                src={image}
+                alt={`${company} project`}
+                class="mx-auto mb-2 h-auto w-auto"
+                style={{
+                  maxHeight: '100%',
+                }}
+                onclick={`showModal('${image.src}')`}
+              />
+            </div>
+            <time class="mb-1 text-sm font-normal text-gray-400 dark:text-gray-500">{year}</time>
+            <h3 class="text-xl font-semibold text-gray-600 dark:text-gray-300">{position}</h3>
+            <p class="mb-1 text-sm font-normal text-gray-400 dark:text-gray-500">{company}</p>
+
+            <p class="mb-4 text-sm font-normal italic text-gray-500 dark:text-gray-400" set:html={description} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div id="modal" class="z-80 fixed left-0 top-0 flex hidden h-screen w-screen items-center justify-center bg-black/70">
+    <a class="z-90 fixed right-8 top-6 text-5xl font-bold text-white" href="javascript:void(0)" onclick="closeModal()"
+      >&times;</a
+    >
+
+    <img
+      id="modal-img"
+      src="data:,"
+      alt="expanded image detail"
+      class="mb-16 max-h-[600px] object-cover"
+      style="max-width:90%;"
+    />
+  </div>
+</section>
+
+<script is:inline>
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  function showModal(src) {
+    modal.classList.remove('hidden');
+    modalImg.src = src;
+    // disable scrolling
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    // enable scrolling
+    document.body.style.overflow = 'auto';
+  }
+
+  // close modal on escape key press
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+
+  // close modal on click outside
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+</script>

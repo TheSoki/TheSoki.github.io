@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import meImage from '@/images/me.jpg';
+---
+
+<section class="py-10 md:py-16">
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <div class="text-center">
+      <div class="mb-16 flex justify-center">
+        <Image src={meImage} alt="Me" class="h-40 w-40 rounded-full md:h-52 md:w-52" />
+      </div>
+
+      <h6 class="mb-8 text-lg font-medium uppercase text-gray-600 dark:text-gray-300 md:text-2xl">Marek Sokol</h6>
+
+      <h1 class="mb-8 text-4xl font-normal leading-none text-gray-900 dark:text-gray-50 md:text-7xl">
+        Software Engineer
+      </h1>
+
+      <p class="mb-16 text-base font-normal text-gray-600 dark:text-gray-300 md:text-xl">
+        I have a passion for software. I enjoy creating tools that make life easier for people.
+      </p>
+
+      <button
+        type="button"
+        id="contact-me-button"
+        class:list={[
+          'rounded-md px-7 py-3 text-sm font-medium transition duration-500 ease-linear md:px-9 md:py-4 md:font-semibold',
+          'text-gray-200 dark:text-gray-700',
+          'hover:bg-gray-700 dark:hover:bg-gray-200',
+          'hover:text-gray-50 dark:hover:text-gray-900',
+          'bg-gray-600 dark:bg-gray-300',
+        ]}
+        onclick="onClick()">
+        Contact me
+      </button>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onClick = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  };
+</script>

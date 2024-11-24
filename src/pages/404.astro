@@ -1,0 +1,26 @@
+---
+import Header from '@/components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main>
+    <Header />
+
+    <section class="py-10 md:py-16">
+      <div class="container mx-auto max-w-screen-xl px-4">
+        <div class="text-center">
+          <h1 class="mb-8 text-5xl font-normal leading-none text-gray-900 dark:text-gray-50">Not Found</h1>
+
+          <p class="text-base font-normal text-gray-600 dark:text-gray-300">
+            The Page you are looking for doesn't exist or an other error occurred.
+          </p>
+          <p class="text-base font-normal text-gray-600 dark:text-gray-300">
+            Go back to the <a href="/" class="underline">homepage</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

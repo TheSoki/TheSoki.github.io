@@ -1,0 +1,83 @@
+---
+const jobs = [
+  {
+    year: '5/2020 - 8/2021',
+    position: 'Junior Front-End Developer',
+    company: 'ProRocketeers',
+    place: 'Ostrava, Czech Republic (on-site)',
+    description: `<span class="not-italic">🚀</span> First encounter with production-grade code. <br/>
+    Worked on a few projects, mostly frontend in React, and also contributed a few lines of backend code in Node.`,
+  },
+  {
+    year: '9/2021 - 12/2021',
+    position: 'Front-End Developer',
+    company: 'ATLAS GROUP',
+    place: 'Ostrava, Czech Republic (on-site)',
+    description: `<span class="not-italic">🔍</span> Contributed to the development of legal-tech applications. </br>
+    <span class="not-italic">👨‍💻</span> Technologies: <br/> 
+    TypeScript, React 17 – hooks, context,</br> 
+    NextJS, Styles – StyledComponents, React Atlantic (custom open source library), <br/> 
+    API – GraphQL, Apollo, GraphQL Code Generator, <br/>
+    Testing – Jest, Enzyme, React testing library, Playwright`,
+  },
+  {
+    year: '1/2022 - 3/2024',
+    position: 'Front-End Developer / Team Lead',
+    company: 'LearnerOn',
+    place: 'Prague, Czech Republic (remote)',
+    description: `<span class="not-italic">📜</span> Front-End developer on fresh new platform for lifelong learners. <br/>
+    Responsibilities include developing new features, bug fixing, and mentoring junior colleagues. Later, took on a leadership role, <br/>
+    leading refactoring efforts and improving code quality. Officially became Front-End Leader from 1/2023. <br/>
+    Also, working towards improved quality assurance using new testing built around E2E testing in Playwright. <br/>
+    <span class="not-italic">👨‍💻</span> Technologies: <br/>
+    TypeScript, React, Tailwind CSS, Apollo, GraphQL, AWS`,
+  },
+  {
+    year: '4/2024 - Present',
+    position: 'Software Engineer',
+    company: "OAK'S LAB",
+    place: 'Prague, Czech Republic (hybrid)',
+    description: `<span class="not-italic">🌳</span> Software engineer building various software solutions for startups, scaleups, and enterprises. <br/>
+    - Engaged with hiring processes <br/>
+    - Engaged directly with clients and managing expectations <br/>
+    - Contributed to the project management process and estimation processes <br/>
+    <span class="not-italic">👨‍💻</span> Technologies: <br/>
+    React, React Native, GraphQL (Apollo Client/Server, Nexus), tRPC, Prisma, <br/>
+    Node.js & TypeScript, GitHub & GitHub Actions, Docker, Terraform, Google Cloud Platform`,
+  },
+];
+---
+
+<section class="py-10 md:py-16">
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <h2 class="mb-5 text-3xl font-medium text-gray-700 dark:text-gray-200">Experience</h2>
+
+    <p class="mb-8 text-base font-normal text-gray-500 dark:text-gray-400">
+      Here's a byte-sized glimpse into my coding adventures – fueled by coffee, adorned in comfy hoodies, and immersed
+      in the world of programming.
+    </p>
+
+    <ol class="relative border-s border-gray-700 dark:border-gray-200">
+      {
+        jobs.reverse().map(({ company, place, position, year, description }) => (
+          <li class="mb-10 ms-4">
+            <div
+              class:list={[
+                'absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full',
+                'border border-gray-900 dark:border-gray-50',
+                'bg-gray-700 dark:bg-gray-200',
+              ]}
+            />
+
+            <time class="mb-1 text-sm font-normal text-gray-400 dark:text-gray-500">{year}</time>
+            <h3 class="text-xl font-semibold text-gray-600 dark:text-gray-300">{position}</h3>
+            <p class="mb-1 text-sm font-normal text-gray-400 dark:text-gray-500">
+              {company}, <span class="text-gray-300 dark:text-gray-600">{place}</span>
+            </p>
+            <p class="mb-4 text-sm font-normal italic text-gray-400 dark:text-gray-500" set:html={description} />
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

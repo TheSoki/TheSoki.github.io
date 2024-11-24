@@ -1,0 +1,66 @@
+---
+const portfolio = [
+  {
+    slug: '01',
+    title: 'University of Ostrava',
+    fieldOfStudy: "Bachelor's degree, Software Systems",
+    description: `
+    I gained comprehensive knowledge in software development, 
+    databases, networking, mathematics, graphics, and web development. 
+    My studies culminated in a bachelor's thesis titled 
+    "Digitization of school timetables for teaching rooms",
+    where I explored the realm of IoT, microcontrollers, embedded systems, 
+    and their integration with web technologies.
+    `,
+  },
+  {
+    slug: '02',
+    title: 'SPŠEI Ostrava',
+    fieldOfStudy: 'Network technology',
+    description: `
+    During four years of high school, my focus was primarily on 
+    advanced networking with Cisco devices and programming in C/C++.
+    `,
+  },
+];
+---
+
+<section class="py-10 md:py-16">
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <div class="mb-8 flex flex-col justify-between lg:flex-row">
+      <div class="mb-10 lg:mb-0">
+        <h2 class="mb-5 text-3xl font-medium text-gray-700 dark:text-gray-200">Education</h2>
+
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+          About my academic journey and what I've learned so far.
+        </p>
+      </div>
+
+      <div class="space-y-6 lg:space-y-24">
+        {
+          portfolio.map(({ slug, title, fieldOfStudy, description }) => (
+            <div class="flex space-x-6">
+              <h3 class="hidden text-3xl font-normal text-gray-700 dark:text-gray-200 md:block">{slug}</h3>
+
+              <span class="mt-5 hidden h-0.5 w-28 bg-gray-300 dark:bg-gray-600 md:block" />
+
+              <div class="max-w-lg">
+                <h4 class="mb-1 text-xl font-normal text-gray-700 dark:text-gray-200">{title}</h4>
+                <p class="mb-2 text-sm font-normal text-gray-500 dark:text-gray-400">{fieldOfStudy}</p>
+
+                <p class="text-sm font-normal text-gray-500 dark:text-gray-400">{description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="text-center md:mx-auto md:w-4/5">
+      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+        I am proficient in both written and spoken English, having learned it since a young age.
+      </p>
+      <p class="text-base font-normal text-gray-500 dark:text-gray-400">In 12/2018 I passed the Cabridge FCE exam.</p>
+    </div>
+  </div>
+</section>

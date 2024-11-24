@@ -1,0 +1,29 @@
+---
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import AboutMe from '@/components/homepage/AboutMe.astro';
+import Projects from '@/components/homepage/Projects.astro';
+import Experience from '@/components/homepage/Experience.astro';
+import MyQualities from '@/components/homepage/MyQualities.astro';
+import Education from '@/components/homepage/Education.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
+import Layout from '@/layouts/Layout.astro';
+import Technologies from '@/components/homepage/Technologies.astro';
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main>
+    <div class="min-h-screen">
+      <Header />
+      <AboutMe />
+    </div>
+
+    <MyQualities />
+    <Experience />
+    <Projects />
+    <Technologies />
+    <Education />
+
+    <Footer />
+  </main>
+</Layout>

@@ -1,0 +1,29 @@
+# Build files
+/dist
+/coverage
+
+# Config files
+.env
+.env.*
+.husky/
+.prettierignore
+.gitignore
+.nvmrc
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Icons and images
+*.svg
+*.gif
+*.jpg
+*.png
+*.webp
+*.jpeg
+
+# Public browser files
+*.xml
+*.ico
+*.txt

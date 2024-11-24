@@ -1,0 +1,92 @@
+---
+type Skill = {
+  section: string;
+  content: {
+    name: string;
+    level: 'trying_out' | 'experienced' | 'expert';
+  }[];
+};
+
+const skills = [
+  {
+    section: 'FRONTEND',
+    content: [
+      { name: 'TypeScript', level: 'expert' },
+      { name: 'React/Preact & Next.js & Gatsby', level: 'expert' },
+      { name: 'React Native & Expo', level: 'expert' },
+      { name: 'Solid', level: 'trying_out' },
+      { name: 'Svelte', level: 'trying_out' },
+      { name: 'Vue.js', level: 'trying_out' },
+      { name: 'Astro', level: 'experienced' },
+    ],
+  },
+  {
+    section: 'BACKEND',
+    content: [{ name: 'NodeJS/Deno/Bun & Express/Fastify/Nest', level: 'experienced' }],
+  },
+  {
+    section: 'INFRASTRUCTURE',
+    content: [
+      { name: 'Postgres/MySQL/Vitess, Redis, NoSQL', level: 'experienced' },
+      { name: 'RabbitMQ/Kafka', level: 'experienced' },
+      { name: 'AWS', level: 'experienced' },
+      { name: 'GCP', level: 'experienced' },
+      { name: 'Terraform', level: 'trying_out' },
+    ],
+  },
+] satisfies Skill[];
+
+const levelWidthPercentMap: Record<string, number> = {
+  trying_out: 33,
+  experienced: 66,
+  expert: 100,
+};
+
+const levelColorMap: Record<string, string> = {
+  trying_out: 'bg-gray-600 dark:bg-gray-500',
+  experienced: 'bg-gray-700 dark:bg-gray-300',
+  expert: 'bg-gray-900 dark:bg-gray-50',
+};
+---
+
+<section class="py-10 md:py-16">
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <h2 class="mb-5 text-3xl font-medium text-gray-700 dark:text-gray-200">Technologies</h2>
+
+    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+      Here are some of the technologies I've worked with that are worth mentioning.
+    </p>
+    <p class="mb-8 text-base font-normal text-gray-500 dark:text-gray-400">
+      I'm always learning new things and experimenting with new technologies, so this list will be (probably) updated
+      over time.
+    </p>
+
+    <div class="space-y-6">
+      {
+        skills.map(({ section, content }) => (
+          <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+            <h3 class="mb-6 text-xl font-semibold text-gray-600 dark:text-gray-300">{section}</h3>
+            <div class="space-y-6">
+              {content.map((skill) => (
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <h4 class="text-sm font-medium text-gray-600 dark:text-gray-300">{skill.name}</h4>
+                    <span class="text-sm font-normal text-gray-400 first-letter:uppercase dark:text-gray-500">
+                      {skill.level.replace('_', ' ')}
+                    </span>
+                  </div>
+                  <div class="relative h-2 w-full rounded bg-gray-200 dark:bg-gray-700">
+                    <div
+                      class={`absolute left-0 top-0 h-full rounded transition-all duration-300 ${levelColorMap[skill.level]}`}
+                      style={`width: ${levelWidthPercentMap[skill.level]}%`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

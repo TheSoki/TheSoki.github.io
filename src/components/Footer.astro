@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon';
+
+const hrefClassList = [
+  'flex h-16 w-16 items-center justify-center rounded-full transition duration-500 ease-in-out',
+  'hover:bg-gray-200 dark:hover:bg-gray-700',
+];
+
+const iconClassList = ['h-12 w-12', 'text-gray-500 dark:text-gray-400', 'hover:text-gray-700 dark:hover:text-gray-200'];
+---
+
+<footer class="py-10 md:py-16">
+  <div class="container mx-auto max-w-screen-xl px-4">
+    <div class="flex items-center justify-center space-x-8">
+      <a
+        href="https://www.linkedin.com/in/marek-sokol"
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={hrefClassList}>
+        <Icon name="mdi:linkedin" class:list={iconClassList} />
+      </a>
+
+      <a href="https://github.com/TheSoki" target="_blank" rel="noopener noreferrer" class:list={hrefClassList}>
+        <Icon name="mdi:github" class:list={iconClassList} />
+      </a>
+
+      <a href="https://TheSoki.github.io" target="_blank" rel="noopener noreferrer" class:list={hrefClassList}>
+        <Icon name="mdi:web" class:list={iconClassList} />
+      </a>
+
+      <a href="mailto:devmareksokol@gmail.com" target="_blank" rel="noopener noreferrer" class:list={hrefClassList}>
+        <Icon name="mdi:email-outline" class:list={iconClassList} />
+      </a>
+    </div>
+  </div>
+
+  <p class="mt-20 text-center text-sm font-normal text-gray-400 dark:text-gray-500">
+    Built with
+    <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>,
+    <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer">Tailwind CSS</a> and
+    <Icon name="mdi:heart" class="inline-block h-4 w-4" />.
+  </p>
+</footer>
